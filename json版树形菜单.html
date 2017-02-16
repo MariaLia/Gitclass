@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#oUl li ul{
+				display: none;
+			}
+			#oUl li ul.show{
+				display: block;
+			}
+			#oUl li ul.hide{
+				display: none;
+			}
+			#oUl li h3{
+				cursor: pointer;
+			}
+			#oUl li h3 span{
+				padding: 0 10px;
+			}
+			#oUl li h3.padL{
+				padding-left: 30px;
+			}
+			li{
+				list-style: none;
+			}
+		</style>
+
+	</head>
+
+<body>
+	<ul id="oUl">
+		<!--<li>
+				<h3><span>+</span>第一级菜单</h3>
+				<ul>
+					<li>
+						<h3><span>+</span>第二级菜单</h3>
+					</li>
+				</ul>
+		</li>-->
+	</ul>
+</body>
+<script>
+var arr = [
+{
+    title : "第一级菜单",
+    child : [
+    	{title:"第二集菜单"},
+        {title:"第二集菜单",
+        child:[
+        		{title:"第三集菜单"},
+        		{title:"第三集菜单",
+        		child:[
+        			{title:"第四集菜单"},
+        			{title:"第四集菜单"},
+        			{title:"第四集菜单"}
+        		]
+        		},
+        		{title:"第三集菜单"}
+        	]
+    	},
+        {
+        	title:"第二集菜单",
+        	child:[
+        		{title:"第三集菜单"},
+        		{title:"第三集菜单"}
+        	]
+        }
+    ]
+},
+{
+    title : "第一级菜单",
+    child : [
+    	{title:"第二集菜单"},
+        {title:"第二集菜单",
+        child:[
+        		{title:"第三集菜单"},
+        		{title:"第三集菜单",
+        		child:[
+        			{title:"第四集菜单"},
+        			{title:"第四集菜单"},
+        			{title:"第四集菜单"}
+        		]
+        		},
+        		{title:"第三集菜单"}
+        	]
+    	},
+        {
+        	title:"第二集菜单",
+        	child:[
+        		{title:"第三集菜单"},
+        		{title:"第三集菜单"}
+        	]
+        }
+    ]
+},
+{
+	title:"第一集菜单",
+	child:[
+		{title:"第二集菜单"},
+		{title:"第二集菜单"}
+	]
+}
+];
+
+	var oUl = document.getElementById('oUl');
+	C(arr,oUl);
+
+	function C(a,l){
+        for(var i=0; i<a.length; i++){
+            var oLi = document.createElement('li');
+            var oH3 = document.createElement('h3');
+            var add = document.createElement('span');
+            add.innerHTML = '+';
+            oH3.appendChild(add);
+
+            /*点击标题*/
+            oH3.onclick = function(){
+				var next = this.nextElementSibling;
+				if(next && this.index != 1){  //一次点击
+                    next.style.display = 'block';
+                    this.index = 1;
+				}else{  //二次点击
+                    this.index = 0;
+                    next.style.display = '';  //兄弟ul元素关闭
+                    var ul = next.getElementsByTagName('ul');  //找到兄弟ul元素下面的所有ul 并关闭
+                    for(var j=0; j<ul.length; j++){
+						ul[j].style.display = '';
+						ul[j].previousElementSibling.index = 0;
+					}
+				}
+			};
+
+            var txt = document.createTextNode(a[i].title);  //创建文本标题节点
+            oH3.appendChild(txt);
+            oLi.appendChild(oH3);
+            l.appendChild(oLi);
+
+            for(var k in a[i]){
+				if(k == 'child'){
+				    add.style.cssText = 'color:blue';
+				    var oUl_1 = document.createElement('ul');
+				    oLi.appendChild(oUl_1);
+                    C(a[i][k],oUl_1);  //递归
+				}
+            }
+        }
+	}
+
+</script>
+</html>
