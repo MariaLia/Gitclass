@@ -1,0 +1,183 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<title>BOM（核心对象是window）</title>
+</head>
+<body>
+<h1 align="center" class="root">
+<a name="0rq2kl6ephpn9h4ukq20r3f3hf">BOM（核心对象是window）</a>
+</h1>
+<div align="center" class="globalOverview">
+<img src="BOM%EF%BC%88%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1%E6%98%AFwindow%EF%BC%89_files/images/BOM%EF%BC%88%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1%E6%98%AFwindow%EF%BC%89.jpg"></div>
+<h2 class="topic">
+<a name="717vimbbf8je4utt4arql42ip0">window.open(URL,name,specs)</a>
+</h2>
+<h3 class="topic">
+<a name="4vbfdov8euilhoga7e60brvgfk">&nbsp;作用：打开新窗口；参数：String</a>
+</h3>
+<h3 class="topic">
+<a name="6fgg27jfidb2vjdqvatio35qv4">&nbsp;返回值：新打开窗口的window对象</a>
+</h3>
+<h3 class="topic">
+<a name="06glrfb80i97ftpnrjobg4ubt6">&nbsp;注意：写在全局会被浏览器拦截，不传参数默认新窗口打开</a>
+</h3>
+<h3 class="topic">
+<a name="0nuu0e71lul1vi60jp05vicos7">&nbsp;URL地址（string）</a>
+</h3>
+<h3 class="topic">
+<a name="27f3cg84u5hqgldec3d0hhukos">&nbsp;&nbsp;'http://www.sina.com',不写http默认为本地地址</a>
+</h3>
+<h3 class="topic">
+<a name="05scldl6336hsnct6q424u10pc">&nbsp;name:打开方式，或者是框架name</a>
+</h3>
+<h3 class="topic">
+<a name="56bppcepo8k1u4smpnsbsi4u3h">&nbsp;&nbsp;&lt;iframe name="iframe1"&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="4odsggeqaievv1971sd52rjnkl">&nbsp;_blank:新窗口打开；_self：当前窗口打开；_top：最外层框架；_parent：父级框架</a>
+</h3>
+<h3 class="topic">
+<a name="3jcuualgvnqqoliaenpfskuvau">&nbsp;specs:规格，只有在新窗口打开有效，'width=100px,height=100px',属性=值，多个属性间用逗号分隔</a>
+</h3>
+<h2 class="topic">
+<a name="0oi3s8gh6v81q87km4k24crnfk">window.close();</a>
+</h2>
+<h3 class="topic">
+<a name="7uk4gn7b01j4jih5oaeu0p2795">&nbsp;作用：关闭窗口</a>
+</h3>
+<h3 class="topic">
+<a name="7ckdp1irfs1bp81q9sk6bqlaof">&nbsp;可以用变量先记录打开测新窗口，然后再用close()关闭</a>
+</h3>
+<h3 class="topic">
+<a name="14i2tpm73c5sjd27avqe7h93ng">&nbsp;firefox下只能关闭open打开的窗口</a>
+</h3>
+<h2 class="topic">
+<a name="518elaa9vkd25kv8evh6vskuo5">navigator</a>
+</h2>
+<h3 class="topic">
+<a name="0j165ltb09f6av9n6v73ijtn2i">&nbsp;浏览器信息对象</a>
+</h3>
+<h3 class="topic">
+<a name="3fjmfp2b7fpbeo9eum8j1t9u2a">&nbsp;navigator.userAgent</a>
+</h3>
+<h3 class="topic">
+<a name="4o8litquv7hkmtqcpss59lgc5l">&nbsp;&nbsp;string,浏览器信息，什么浏览器Chrome，Firefox，版本号</a>
+</h3>
+<h2 class="topic">
+<a name="661p597lpbpn6iqo5nepf2g8o2">location</a>
+</h2>
+<h3 class="topic">
+<a name="1tmna7m700j6m2hdp9iiohuuqb">&nbsp;地址栏对象,下面的属性可以获取也可以设置</a>
+</h3>
+<h3 class="topic">
+<a name="1h4aiojgk66scv6cih650rer6v">&nbsp;location.href</a>
+</h3>
+<h3 class="topic">
+<a name="5i94vpnh1058vec3kopdsppf4s">&nbsp;&nbsp;绝对地址，修改值后会刷新页面</a>
+</h3>
+<h3 class="topic">
+<a name="2p06ksf3vll1vgpur9qfc4o9p8">&nbsp;location.search</a>
+</h3>
+<h3 class="topic">
+<a name="77ii8e3tqkioam020o87gpfsoe">&nbsp;&nbsp;查询信息，修改值后会刷新页面</a>
+</h3>
+<h3 class="topic">
+<a name="51p2e51vjkbqgq6uq5gvi5r2hc">&nbsp;&nbsp;search设置不能放到全局，不然会无限刷新页面</a>
+</h3>
+<h3 class="topic">
+<a name="08krdf4a0sbd0mvnmpoen6kkmi">&nbsp;&nbsp;？s=abc  &amp;符号连接多个</a>
+</h3>
+<h3 class="topic">
+<a name="1tmmh28r3rcs8evg0rql6qaul1">&nbsp;location.hash</a>
+</h3>
+<h3 class="topic">
+<a name="7d1lj86hjpeojq2rmqei24ji9u">&nbsp;&nbsp;锚信息，不会刷新页面</a>
+</h3>
+<h3 class="topic">
+<a name="3ln01beimqjkdo0b9lo3tf19hc">&nbsp;&nbsp;window.onhashchange  当hash改变触发的事件</a>
+</h3>
+<h3 class="topic">
+<a name="3vhbf8t524vlea1vpcri3imh0n">&nbsp;&nbsp;#page=1  &amp;符号连接多个</a>
+</h3>
+<h2 class="topic">
+<a name="76g3ju62b13urabun359p9fj4v">window.top / window.parent</a>
+</h2>
+<h3 class="topic">
+<a name="397qibe1p6g149nc4tiqt5v8pd">&nbsp;最外层window对象  /  父级window对象</a>
+</h3>
+<h2 class="topic">
+<a name="1hp1jdg4e4gv12grubkj2hnb4i">window.innerWidth  /  window.innerHeight</a>
+</h2>
+<h3 class="topic">
+<a name="11cn862vk28pqc1fu5dvnp9vbh">&nbsp;获取可视宽高 - 标准方法</a>
+</h3>
+<h3 class="topic">
+<a name="41sokubf4at6eh4abq2svklrpb">&nbsp;高版本支持，低版本不支持</a>
+</h3>
+<h3 class="topic">
+<a name="2c0hitvpu8sntuqt53fl11lbev">&nbsp;PC端可用下面这种方法，兼容性比较好</a>
+</h3>
+<h3 class="topic">
+<a name="3nn8pdni6hc3d2dj4bcrfuq5su">&nbsp;document.documentElement.clientWidth  /  Height</a>
+</h3>
+<h2 class="topic">
+<a name="4n2ha4mnbm456u2tspc8njhnm9">window.onresize</a>
+</h2>
+<h3 class="topic">
+<a name="3qub6fmvtjk1rsb5e0oq7q7jm1">&nbsp;窗口尺寸改变时候触发事件</a>
+</h3>
+<h2 class="topic">
+<a name="2k50kt87quupf5jplqvsmg0k2c">window.onscroll</a>
+</h2>
+<h3 class="topic">
+<a name="04772q3j24qi2nqk36g101leqd">&nbsp;滚动条滚动时触发的事件</a>
+</h3>
+<h2 class="topic">
+<a name="4b4n2sdfe9alfjdguo760e14gh">window.pageXoffset  /  window.pageYoffset</a>
+</h2>
+<h3 class="topic">
+<a name="6vkn8n05kd1vda3j5kq86u45sq">&nbsp;获取滚动条滚动距离 - 标准方法</a>
+</h3>
+<h3 class="topic">
+<a name="1uvud4ep5h4bstqjch2f81c6c6">&nbsp;chrome方法</a>
+</h3>
+<h3 class="topic">
+<a name="17m9t167n7c78rrsppcutptrql">&nbsp;&nbsp;document.body.scrollTop</a>
+</h3>
+<h3 class="topic">
+<a name="56ulpaiu3aakj8qhvf0f0ku72r">&nbsp;其他浏览器方法</a>
+</h3>
+<h3 class="topic">
+<a name="3n4lba025e3o3spaidhiap4mnd">&nbsp;&nbsp;document.documentElement.scrollTop</a>
+</h3>
+<h3 class="topic">
+<a name="4snqhcq5p0316oc0ig1mpurceu">&nbsp;&nbsp;chrome也可以用这种方法，但是获取到的是0</a>
+</h3>
+<h2 class="topic">
+<a name="625pqnuh8v2t69t423fpm1rjn0">window.scrollTo(x,y)</a>
+</h2>
+<h3 class="topic">
+<a name="0t8t8bslsklnu0jun68ca9eubm">&nbsp;设置滚动条滚动距离</a>
+</h3>
+<h3 class="topic">
+<a name="691ldb2brhqf2phtd4f2gvnvkm">&nbsp;参数：x轴距离，y轴距离</a>
+</h3>
+<h3 class="topic">
+<a name="2pnnp98njmifbnrnqhoif8u4pf">&nbsp;（0，1000）参数不带单位</a>
+</h3>
+<h2 class="topic">
+<a name="73miveo6c600mb16goptatmurk">scrollHeight / scrollWidth</a>
+</h2>
+<h3 class="topic">
+<a name="5acl3k2ef1ln3d61ejgh0e069q">&nbsp;例：console.log(box.scrollHeight)</a>
+</h3>
+<h3 class="topic">
+<a name="04l73ci3ir1mvqvgpr9jab2pl7">&nbsp;如果自己的内容 或子元素没有超出本身，为clientHeight的值</a>
+</h3>
+<h3 class="topic">
+<a name="5u7k2ag4hkpiilh4b3gncetbtq">&nbsp;如果自己的内容或是子元素超出了本身，为自身clientHeight 值 + 超出部分高度</a>
+</h3>
+</body>
+</html>

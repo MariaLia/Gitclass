@@ -1,0 +1,244 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<title>DOM</title>
+</head>
+<body>
+<h1 align="center" class="root">
+<a name="7koe3b1u1dik7b9rsahf6sm0mg">DOM</a>
+</h1>
+<div align="center" class="globalOverview">
+<img src="DOM_files/images/DOM.jpg"></div>
+<h2 class="topic">
+<a name="7e5d73dctkhjt8binmk50njb58">document.createElement('标签名')</a>
+</h2>
+<h3 class="topic">
+<a name="5sr5bimosah5eusc856r5bieuj">&nbsp;创建元素，create是document下的方法，所以前面必须这么写</a>
+</h3>
+<h3 class="topic">
+<a name="2i6q13430hlrdoqe8rjtuj99ng">&nbsp;只是创建了元素，但是页面上还没有这个元素，</a>
+</h3>
+<h2 class="topic">
+<a name="7m8iae9anr13mpeu31p9gi53rs">父级节点.appendChild(要插入的节点)</a>
+</h2>
+<h3 class="topic">
+<a name="4ks3qcqi3i5jhr5sg3mblocf4u">&nbsp;作用：向父级节点！！最后！！插入要插入的节点</a>
+</h3>
+<h3 class="topic">
+<a name="2nqbd6sg45tgbqvftfrttrbveb">&nbsp;如果插入的是页面中已有的节点，相当于！！剪切！！效果</a>
+</h3>
+<h2 class="topic">
+<a name="35nof5ua9r6d83ii6kaor0i10m">父级节点.insertBefore(要插入的节点，插在哪个节点前)</a>
+</h2>
+<h3 class="topic">
+<a name="2b63a5tefhb21s3vg0o3t8082m">&nbsp;作用:在父级节点下，把要插入的节点，插入到被插入的节点前</a>
+</h3>
+<h3 class="topic">
+<a name="6bht255ugou12c45hr26ao0rt2">&nbsp;如果插入的是页面已有节点，相当于！！剪切！！</a>
+</h3>
+<h3 class="topic">
+<a name="1k351p36jutg878ejlgjrbk71t">&nbsp;被插入的节点一定要是父级节点下的节点，否则会！！报错</a>
+</h3>
+<h2 class="topic">
+<a name="7fj865ua78u80imchhfjiolhq0">父级节点.removeChild(要删除的节点)</a>
+</h2>
+<h3 class="topic">
+<a name="0u8plds1uir802gd8srp6vm9fu">&nbsp;删除父级节点下要删除的节点</a>
+</h3>
+<h3 class="topic">
+<a name="3654rus6l7l2gnpe565h5fl500">&nbsp;要删除的节点必须在父级节点下 ！！！否则会报错</a>
+</h3>
+<h2 class="topic">
+<a name="5qaai0d64o2vkmmo8a135mvob7">父级节点.replaceChild(要替换的节点，被替换的节点)</a>
+</h2>
+<h3 class="topic">
+<a name="36mdp6qr2827imscimdbkae7l1">&nbsp;在父级节点下，用要替换的节点，替换被替换的节点</a>
+</h3>
+<h3 class="topic">
+<a name="1vkncq5hkm6n7i999i7ko3q56l">&nbsp;被替换的节点一定要在父级节点下  ！！！否则会报错</a>
+</h3>
+<h3 class="topic">
+<a name="72l66drmdkvsdan98jfhdttpia">&nbsp;如果要替换的节点是页面中已有的节点，相当于！！剪切！！</a>
+</h3>
+<h2 class="topic">
+<a name="4da48kb4l65bg0vup5f68gu6lc">node.cloneNode(参数)</a>
+</h2>
+<h3 class="topic">
+<a name="140cj7tg2fqu3cn1nonmufv01o">&nbsp;克隆节点，前面是要被克隆的节点</a>
+</h3>
+<h3 class="topic">
+<a name="1a1sjt52ute35030sqcj36uqn3">&nbsp;不传参数默认是false</a>
+</h3>
+<h3 class="topic">
+<a name="4cn2af0ef56u01g5lcku6taeav">&nbsp;true:深度克隆，子节点也克隆，包括行间属性</a>
+</h3>
+<h3 class="topic">
+<a name="6q9g9fhrfrnukc2e4fsj4j5t1g">&nbsp;false:只能克隆自身包括行间属性，下面的子节点不克隆</a>
+</h3>
+<h3 class="topic">
+<a name="47gv5gu4eh3dglrq6v03uef1nv">&nbsp;可以克隆 写在行间的 属性和自定义属性</a>
+</h3>
+<h3 class="topic">
+<a name="2lmq4fb9tfqul1493omf0tt3ps">&nbsp;不能克隆：JS添加的自定义属性,和事件</a>
+</h3>
+<h2 class="topic">
+<a name="7keni8bp2fhftl0unuo4trnv9h">页面可视区宽/高</a>
+</h2>
+<h3 class="topic">
+<a name="2m71q1cebeoujrcd7r2cgncr4r">&nbsp;document.documentElement.clientWidth</a>
+</h3>
+<h3 class="topic">
+<a name="1kfhk9oen85ovsqh544nb05n4t">&nbsp;document.documentElement.clientHeight</a>
+</h3>
+<h2 class="topic">
+<a name="153g4lnnob5n8s7u2jo32117lv">E.clientWidth / E.clientHeight</a>
+</h2>
+<h3 class="topic">
+<a name="1k3m2l3gledabbi1vnmmih8ggh">&nbsp;自身宽/高+padding，不带单位</a>
+</h3>
+<h3 class="topic">
+<a name="68kcpeadmtb8rere8jauf3tfd1">&nbsp;内嵌元素 是 0</a>
+</h3>
+<h2 class="topic">
+<a name="16na5rmkm2c5eu03815mt12dds">E.offsetWidth / E.offsetHeight</a>
+</h2>
+<h3 class="topic">
+<a name="679fp3806lor52vj17h09dr5ib">&nbsp;自身宽/高+padding+border，不带单位</a>
+</h3>
+<h2 class="topic">
+<a name="5gm57gri4lmt3c8f61us1v57fk">E.offsetLeft  /  E.offsetTop</a>
+</h2>
+<h3 class="topic">
+<a name="5rthnpd4a5fdbaeb316n97nsiq">&nbsp;获取 E 左 / 上 边框外，到E的定位父级的 左 / 上 边框内的距离，不带单位</a>
+</h3>
+<h2 class="topic">
+<a name="57u0lv36iionql351jl81groee">E.offsetParent</a>
+</h2>
+<h3 class="topic">
+<a name="78f5mr0jhfnqi9cfgb3clfvf4q">&nbsp;获取E的定位父级元素,属性值不为static</a>
+</h3>
+<h3 class="topic">
+<a name="06qohinpqbfmbb8fidv7u4mihi">&nbsp;没有定位父级，最后找到body</a>
+</h3>
+<h3 class="topic">
+<a name="68d9usdanpjds5gnq9de9u8t9s">&nbsp;body的定位父级是null</a>
+</h3>
+<h2 class="topic">
+<a name="6nse9ko416rvuu5cra2gut2db0">this.herf</a>
+</h2>
+<h3 class="topic">
+<a name="53r0nmh3lu6v0p15sn9jus8hdg">&nbsp;当前链接的href属性  ==  this.getAttribute('href')</a>
+</h3>
+<h2 class="topic">
+<a name="7mq1dmnqavnqofiqnhhm1afjus">node.nodeType</a>
+</h2>
+<h3 class="topic">
+<a name="1os98932ht4qfsnftj95qothna">&nbsp;查看节点类型，返回值Number</a>
+</h3>
+<h3 class="topic">
+<a name="79qrotc9s5ps6okagktk6u1lvv">&nbsp;常用的节点类型&#13;
+1 - 元素节点，2 - 属性节点，3 - 文本节点，8 - 注释节点，9 - document节点</a>
+</h3>
+<h2 class="topic">
+<a name="3u91cpuouqcjft5dhp1nkpkrj7">node.nodeName</a>
+</h2>
+<h3 class="topic">
+<a name="3ni4520kr1k3i8nua4h0pssre3">&nbsp;查看节点名称，返回值（string）</a>
+</h3>
+<h2 class="topic">
+<a name="70fshrqvi3m8lgsrh0k16593ad">E.parentNode</a>
+</h2>
+<h3 class="topic">
+<a name="6ku9f8bjeg1gn8v62fqagkcqei">&nbsp;获取该元素节点的父级元素节点（只能获取，不能设置）</a>
+</h3>
+<h2 class="topic">
+<a name="3fd6hl8k84d24gjdl5nmrgfp25">E.previousElementSibling</a>
+</h2>
+<h3 class="topic">
+<a name="0avrdrd4n7cf36l7sv0rklkcis">&nbsp;获取上一个兄弟元素节点</a>
+</h3>
+<h3 class="topic">
+<a name="4lfn5b69l5iddlkgdrd0bgo973">&nbsp;被返回的节点以 Node 对象的形式返回</a>
+</h3>
+<h3 class="topic">
+<a name="5aucf0mch5primjm0orv6kjkc2">&nbsp;如果没有，则返回值是 null</a>
+</h3>
+<h3 class="topic">
+<a name="6vcdpksc3e9k98gf3nm6ifrg0n">&nbsp;同样也有  prevSibling</a>
+</h3>
+<h2 class="topic">
+<a name="5bhllt3p8eq9ignp767ptnn9b2">E.nextElementSibling</a>
+</h2>
+<h3 class="topic">
+<a name="6meeotr6hthpjc0b3h83s54qf4">&nbsp;获取下一个兄弟元素节点</a>
+</h3>
+<h3 class="topic">
+<a name="5e3j5u70m20ogcu3gtfcd21kqf">&nbsp;同样也有  nextSibling</a>
+</h3>
+<h2 class="topic">
+<a name="3f37pnn1c4lnnrd24npnk0jmei">E.childNodes</a>
+</h2>
+<h3 class="topic">
+<a name="3k0gcm2nnhg207gf7hsehiuflo">&nbsp;获取到所有第一级的子节点（包括空格 和换行符 算作文本节点）</a>
+</h3>
+<h3 class="topic">
+<a name="69v6lhgcal7cih4f85lalv6om9">&nbsp;E.children - 获取所有第一级元素节点,是个集合（非标准方法，厂商支持）</a>
+</h3>
+<h2 class="topic">
+<a name="7fjpvrm803f5m77v607vn5ftkv">E.firstElementChild</a>
+</h2>
+<h3 class="topic">
+<a name="3desf083cega2iucdn607tqolq">&nbsp;获取E元素节点下第一个元素节点</a>
+</h3>
+<h3 class="topic">
+<a name="73mt1a0650q9mbacbdpq70v7sq">&nbsp;E.firstChild - 可以获取E元素下第一个任意类型的节点</a>
+</h3>
+<h2 class="topic">
+<a name="7chdru28ll3mtidod53pr21r9g">E.lastElementChild</a>
+</h2>
+<h3 class="topic">
+<a name="3jne8npi67ue3opvhn0vhugro5">&nbsp;获取E元素节点下最后一个元素子节点</a>
+</h3>
+<h3 class="topic">
+<a name="5uu6k6r861rasts2esrau98umt">&nbsp;E.lastChild - 可以获取E元素节点下第一任意类型的节点</a>
+</h3>
+<h2 class="topic">
+<a name="3don6nhk1uas9ot0r8c6kggrt1">E.removeAttribute('属性名')</a>
+</h2>
+<h3 class="topic">
+<a name="47l0c0edodg2rqkcc6f9un7rf8">&nbsp;删除E元素节点的行间属性和属性值</a>
+</h3>
+<h2 class="topic">
+<a name="3s653gnaiqokarfti0kkefsjo5">E.setAttribute('属性名'，('属性值'))</a>
+</h2>
+<h3 class="topic">
+<a name="7p6jq5j5bqfaika3l70of5duk7">&nbsp;行间固有属性和行间自定义属性都能设置</a>
+</h3>
+<h2 class="topic">
+<a name="7gn2t6vppeq3osu16plm0qvspm">E.getAttribute('属性名')</a>
+</h2>
+<h3 class="topic">
+<a name="43oa99augb7b02143u2qa0s7ju">&nbsp;获取行间固有属性，和自定义属性</a>
+</h3>
+<h2 class="topic">
+<a name="5lofkrbg2eg6d9tq1rcshaentt">E.getBoundingClientRect（）</a>
+</h2>
+<h3 class="topic">
+<a name="102a29hgpt8qotnrebbe0io48n">&nbsp;对象，top bottom left right width height ，不带单位</a>
+</h3>
+<h3 class="topic">
+<a name="1ukv2uulr0k96jbfbq5nlp8v16">&nbsp;bottom - 元素节点的下外边框到！！！可视区上边的距离</a>
+</h3>
+<h3 class="topic">
+<a name="12raus5udkv4lj22qrl5f55s8c">&nbsp;right - 元素右外边框到！！！可视区左边的距离</a>
+</h3>
+<h2 class="topic">
+<a name="5h9hrq2fbdv1v5n4ka081f0lut">E.attributes</a>
+</h2>
+<h3 class="topic">
+<a name="7oum6418mnk6k5pk3f340bcajo">&nbsp;获取到的是元素属性集合</a>
+</h3>
+</body>
+</html>
