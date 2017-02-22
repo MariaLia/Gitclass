@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #wrapper{
+            width:600px;
+            height: 600px;
+            border: 1px solid #333;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -300px;
+            margin-top: -300px;
+        }
+        #box{
+            width: 60px;
+            height: 60px;
+            background-color:dodgerblue;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="box"></div>
+    </div>
+<script>
+
+    var oWrap = document.getElementById('wrapper');  //外层框架
+
+    function Div(id){
+        this.box = document.getElementById(id);
+    }
+
+    Div.prototype.init = function(){  //鼠标按下
+        var that = this;
+        this.box.addEventListener('mousedown',function(ev){
+            ev.preventDefault();
+            that.down(ev);
+        });
+    };
+
+    Div.prototype.down = function(ev){
+        this.box.isDown = true;  //判断鼠标当前是按下状态
+        var oX = ev.pageX;
+        var oY = ev.pageY;
+        this.iX = oWrap.getBoundingClientRect().left;
+        this.iY = oWrap.getBoundingClientRect().top;
+        this.disX = oX - this.box.offsetLeft - this.iX;
+        this.disY = oY - this.box.offsetTop - this.iY;
+
+        this.box.style.left = oX - this.disX - this.iX + 'px';
+        this.box.style.top = oY - this.disY - this.iY + 'px';
+    };
+
+    Div.prototype.move = function(ev){
+        var oX = ev.pageX;
+        var oY = ev.pageY;
+
+        this.l = oX - this.disX - this.iX;
+        if(this.l < 0){
+            this.l = 0;
+        }
+        if( this.l > (oWrap.clientWidth - this.box.offsetWidth) ){
+            this.l = oWrap.clientWidth - this.box.offsetWidth;
+        }
+
+        this.t = oY - this.disY - this.iY;
+        if(this.t < 0){
+            this.t = 0;
+        }
+        if(this.t > (oWrap.clientHeight - this.box.offsetHeight) ){
+            this.t = oWrap.clientHeight - this.box.offsetHeight;
+        }
+
+        this.box.style.left = this.l + 'px';
+        this.box.style.top = this.t + 'px';
+    };
+
+    Div.prototype.up = function(){
+        this.box.isDown = false;  //判断鼠标当前是抬起状态
+    };
+
+    var e = new Div('box');
+    e.init();
+    document.addEventListener('mousemove',function(ev){
+        if(e.box.isDown){
+            e.move(ev);
+        }
+    });
+    document.addEventListener('mouseup',function(){
+        e.up();
+    });
+
+</script>
+</body>
+</html>
